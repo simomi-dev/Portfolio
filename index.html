@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miklós Simó — Creative Technologist | Portfolio</title>
+  <meta name="description" content="Portfolio of Miklós Simó — Creative Technologist, Music Producer, AI Artist & Visual Creator crafting modern digital experiences.">
+  <meta name="keywords" content="portfolio, creative technologist, music producer, AI artist, visual creator, digital design">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a0533'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='14' font-weight='700' fill='%238b5cf6' text-anchor='middle'%3EMS%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Premium Ambient Background Motion & Subtle Dust -->
+<div class="ambient-bg" aria-hidden="true">
+  <div class="ambient-dust"></div>
+  <div class="ambient-blob ambient-blob-1"></div>
+  <div class="ambient-blob ambient-blob-2"></div>
+  <div class="ambient-blob ambient-blob-3"></div>
+</div>
+
+<!-- ═══════════════ AAA CINEMATIC LOADER ═══════════════ -->
+<div id="loader" class="loader">
+  <div class="aaa-loader-container">
+    <svg class="aaa-loader-svg" width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- High-End Metallic & Glass Filters -->
+        <filter id="aaa-neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="glow" />
+          <feComposite in="SourceGraphic" in2="glow" operator="over" />
+        </filter>
+        <filter id="aaa-soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="8" result="softGlow" />
+          <feComposite in="SourceGraphic" in2="softGlow" operator="over" />
+        </filter>
+        <linearGradient id="aaa-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00f0ff" />
+          <stop offset="100%" stop-color="#0284c7" />
+        </linearGradient>
+        <linearGradient id="aaa-purple" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#d946ef" />
+          <stop offset="100%" stop-color="#7c3aed" />
+        </linearGradient>
+      </defs>
+      
+      <!-- Outer Diamond — rounded tips via quadratic bezier -->
+      <path class="aaa-line aaa-outer" d="M 45.8 6.2 Q 50 2 54.2 6.2 L 93.8 45.8 Q 98 50 93.8 54.2 L 54.2 93.8 Q 50 98 45.8 93.8 L 6.2 54.2 Q 2 50 6.2 45.8 Z" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+      <path class="aaa-line aaa-outer-glow" d="M 45.8 6.2 Q 50 2 54.2 6.2 L 93.8 45.8 Q 98 50 93.8 54.2 L 54.2 93.8 Q 50 98 45.8 93.8 L 6.2 54.2 Q 2 50 6.2 45.8 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" filter="url(#aaa-soft-glow)"/>
+
+      <!-- Inner Monogram (SM) — rounded corners via quadratic bezier -->
+      <g transform="scale(0.85)" transform-origin="50 50">
+        <!-- S path (Left/Purple) —  smooth Q at each turn -->
+        <path class="aaa-line aaa-line-s" d="M 98 50 L 54.2 93.8 Q 50 98 45.8 93.8 L 30.2 78.2 Q 26 74 30.2 69.8 L 69.8 30.2 Q 74 26 69.8 21.8 L 54.2 6.2 Q 50 2 45.8 6.2 L 2 50" fill="none" stroke="url(#aaa-purple)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#aaa-neon-glow)"/>
+        <!-- M path (Right/Cyan) — smooth Q at each valley -->
+        <path class="aaa-line aaa-line-m" d="M 2 50 L 21.8 30.2 Q 26 26 30.2 30.2 L 45.8 45.8 Q 50 50 54.2 45.8 L 69.8 30.2 Q 74 26 78.2 30.2 L 98 50" fill="none" stroke="url(#aaa-cyan)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#aaa-neon-glow)"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- ═══════════════ CUSTOM CURSOR ═══════════════ -->
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<header class="main-nav" id="main-nav">
+  <div class="nav-container">
+    <a href="#hero" class="nav-brand" id="nav-brand-link">
+      <!-- Luxury AAA Monogram Logo -->
+      <svg class="brand-svg diamond-nav-svg" width="38" height="38" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="nav-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00f0ff" />
+            <stop offset="100%" stop-color="#0284c7" />
+          </linearGradient>
+          <linearGradient id="nav-purple" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d946ef" />
+            <stop offset="100%" stop-color="#7c3aed" />
+          </linearGradient>
+        </defs>
+        <path class="logo-outer" d="M 45.8 6.2 Q 50 2 54.2 6.2 L 93.8 45.8 Q 98 50 93.8 54.2 L 54.2 93.8 Q 50 98 45.8 93.8 L 6.2 54.2 Q 2 50 6.2 45.8 Z" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+        <g transform="scale(0.85)" transform-origin="50 50">
+          <path class="logo-s" d="M 98 50 L 54.2 93.8 Q 50 98 45.8 93.8 L 30.2 78.2 Q 26 74 30.2 69.8 L 69.8 30.2 Q 74 26 69.8 21.8 L 54.2 6.2 Q 50 2 45.8 6.2 L 2 50" fill="none" stroke="url(#nav-purple)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="logo-m" d="M 2 50 L 21.8 30.2 Q 26 26 30.2 30.2 L 45.8 45.8 Q 50 50 54.2 45.8 L 69.8 30.2 Q 74 26 78.2 30.2 L 98 50" fill="none" stroke="url(#nav-cyan)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <span class="brand-name">MIKLÓS SIMÓ</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+      <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+      <a href="#featured" class="nav-link" data-section="featured">Works</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#music" class="nav-link" data-section="music">Music</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
+      <a href="#cv" class="nav-link" data-section="cv">CV</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay">
+  <div class="mobile-brand" style="margin-bottom: 2rem;">
+    <!-- AAA Neon Monogram for Mobile Menu -->
+    <svg class="brand-svg diamond-nav-svg" width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="nav-cyan-mobile" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00f0ff" />
+          <stop offset="100%" stop-color="#0284c7" />
+        </linearGradient>
+        <linearGradient id="nav-purple-mobile" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#d946ef" />
+          <stop offset="100%" stop-color="#7c3aed" />
+        </linearGradient>
+      </defs>
+      <path class="logo-outer" d="M 45.8 6.2 Q 50 2 54.2 6.2 L 93.8 45.8 Q 98 50 93.8 54.2 L 54.2 93.8 Q 50 98 45.8 93.8 L 6.2 54.2 Q 2 50 6.2 45.8 Z" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+      <g transform="scale(0.85)" transform-origin="50 50">
+        <path class="logo-s" d="M 98 50 L 54.2 93.8 Q 50 98 45.8 93.8 L 30.2 78.2 Q 26 74 30.2 69.8 L 69.8 30.2 Q 74 26 69.8 21.8 L 54.2 6.2 Q 50 2 45.8 6.2 L 2 50" fill="none" stroke="url(#nav-purple-mobile)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="logo-m" d="M 2 50 L 21.8 30.2 Q 26 26 30.2 30.2 L 45.8 45.8 Q 50 50 54.2 45.8 L 69.8 30.2 Q 74 26 78.2 30.2 L 98 50" fill="none" stroke="url(#nav-cyan-mobile)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </svg>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="#hero" class="mobile-nav-link" data-section="hero">Home</a>
+    <a href="#featured" class="mobile-nav-link" data-section="featured">Works</a>
+    <a href="#projects" class="mobile-nav-link" data-section="projects">Projects</a>
+    <a href="#music" class="mobile-nav-link" data-section="music">Music</a>
+    <a href="#about" class="mobile-nav-link" data-section="about">About</a>
+    <a href="#cv" class="mobile-nav-link" data-section="cv">CV</a>
+    <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
+  </nav>
+</div>
+
+<!-- ═══════════════ HERO SECTION ═══════════════ -->
+<section id="hero" class="hero-section">
+  <!-- Immersive AAA Parallax Background -->
+  <div class="hero-bg" id="hero-bg">
+    <!-- Deep Cinematic Base -->
+    <div class="hero-bg-base"></div>
+    
+    <!-- Huge background rotating HUD diamond -->
+    <div class="hero-bg-logo" aria-hidden="true">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <!-- Outer Diamond (bg, decorative) -->
+        <path d="M 45.8 6.2 Q 50 2 54.2 6.2 L 93.8 45.8 Q 98 50 93.8 54.2 L 54.2 93.8 Q 50 98 45.8 93.8 L 6.2 54.2 Q 2 50 6.2 45.8 Z" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="0.5"/>
+        <g transform="scale(0.85)" transform-origin="50 50">
+          <path d="M 98 50 L 54.2 93.8 Q 50 98 45.8 93.8 L 30.2 78.2 Q 26 74 30.2 69.8 L 69.8 30.2 Q 74 26 69.8 21.8 L 54.2 6.2 Q 50 2 45.8 6.2 L 2 50" fill="none" stroke="rgba(217,70,239,0.05)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M 2 50 L 21.8 30.2 Q 26 26 30.2 30.2 L 45.8 45.8 Q 50 50 54.2 45.8 L 69.8 30.2 Q 74 26 78.2 30.2 L 98 50" fill="none" stroke="rgba(0,240,255,0.05)" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Floating Glass Geometry -->
+    <div class="hero-bg-layer" id="parallax-layer-glass-1">
+      <div class="glass-orb orb-1"></div>
+    </div>
+    <div class="hero-bg-layer" id="parallax-layer-glass-2">
+      <div class="glass-orb orb-2"></div>
+    </div>
+    <div class="hero-bg-layer" id="parallax-layer-glass-3">
+      <div class="glass-orb orb-3"></div>
+    </div>
+
+    <!-- Layer 1: Deep cinematic space -->
+    <div class="hero-bg-layer hero-layer-stars" id="parallax-layer-1"></div>
+    <!-- Layer 2: Distant nebula glow -->
+    <div class="hero-bg-layer hero-layer-nebula" id="parallax-layer-2"></div>
+    <!-- Layer 5: Particle field canvas -->
+    <div class="hero-bg-layer hero-layer-particles" id="parallax-layer-5">
+      <canvas id="hero-particles-canvas"></canvas>
+    </div>
+    <!-- Layer 6: Volumetric light rays -->
+    <div class="hero-bg-layer hero-layer-rays" id="parallax-layer-6"></div>
+    <!-- Cinematic vignette + deep gradient overlay -->
+    <div class="hero-bg-vignette"></div>
+    <div class="hero-bg-gradient"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text-group" id="hero-text">
+      <p class="hero-greeting anim-item">Hello, I’m</p>
+      <h1 class="hero-name anim-item">
+        <span class="name-line">Miklós</span>
+        <span class="name-line accent">Simó</span>
+      </h1>
+      <p class="hero-title anim-item">
+        Digital Designer
+        <span class="title-divider">•</span>
+        Brand
+        <span class="title-divider">•</span>
+        Motion
+        <span class="title-divider">•</span>
+        Creative Development
+      </p>
+      <p class="hero-tagline anim-item">Crafting modern digital experiences that merge sound, visuals, and technology into something memorable.</p>
+      <div class="hero-cta anim-item">
+        <a href="#projects" class="btn-primary glow-btn" id="cta-projects">
+          <span>View Projects</span>
+          <div class="btn-glow"></div>
+        </a>
+        <a href="#music" class="btn-secondary glow-btn" id="cta-music">
+          <span>Listen to Music</span>
+          <div class="btn-glow"></div>
+        </a>
+        <a href="#contact" class="btn-outline glow-btn" id="cta-contact">
+          <span>Contact</span>
+          <div class="btn-glow"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" id="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════ BRAND MOCKUPS ═══════════════ -->
+<section id="featured" class="section featured-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Showcase</span>
+      <h2 class="section-title">Brand <em>Mockups</em></h2>
+      <p class="section-desc">A curated selection of premium branding systems, packaging mockups, and UI design presentations.</p>
+    </div>
+    <div class="featured-grid">
+      <!-- Card 1: NovaRun -->
+      <div class="featured-card reveal-up" data-tilt data-project="nova-run">
+        <div class="card-image">
+          <div class="card-img-inner">
+            <img src="assets/projects/nova-run/thumb.png" alt="NovaRun Sneakers Mockup" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-overlay">
+            <span class="card-view">View Project</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span class="card-category">Sneaker Brand</span>
+          <h3 class="card-title">NovaRun</h3>
+          <p class="card-desc">Futuristic streetwear and athletic branding featuring glossy neon packaging.</p>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      <!-- Card 2: Luma Coffee -->
+      <div class="featured-card reveal-up" data-tilt data-project="luma-coffee">
+        <div class="card-image">
+          <div class="card-img-inner">
+            <img src="assets/projects/luma-coffee/thumb.png" alt="Luma Coffee Roasters Mockup" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-overlay">
+            <span class="card-view">View Project</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span class="card-category">Artisanal Coffee</span>
+          <h3 class="card-title">Luma Roasters</h3>
+          <p class="card-desc">Minimalist packaging and warm identity for a premium coffee roaster.</p>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      <!-- Card 3: Pulse Fitness -->
+      <div class="featured-card reveal-up" data-tilt data-project="pulse-fitness">
+        <div class="card-image">
+          <div class="card-img-inner">
+             <img src="assets/projects/pulse-fitness/thumb.png" alt="Pulse Fitness App Mockup" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-overlay">
+            <span class="card-view">View Project</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span class="card-category">Fitness App</span>
+          <h3 class="card-title">Pulse Fitness</h3>
+          <p class="card-desc">Data-driven workout tracker with heavy neon UI aesthetics.</p>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      <!-- Card 4: Flare Streetwear -->
+      <div class="featured-card reveal-up" data-tilt data-project="flare-streetwear">
+        <div class="card-image">
+          <div class="card-img-inner">
+            <img src="assets/projects/flare-streetwear/thumb.png" alt="Flare Streetwear Mockup" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-overlay">
+            <span class="card-view">View Project</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span class="card-category">Streetwear Label</span>
+          <h3 class="card-title">Flare</h3>
+          <p class="card-desc">Raw, unfiltered, youth-driven apparel branding and editorial lookbooks.</p>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      <!-- Card 5: Spark Dating -->
+      <div class="featured-card reveal-up" data-tilt data-project="spark-dating">
+        <div class="card-image">
+          <div class="card-img-inner">
+            <img src="assets/projects/spark-dating/thumb.png" alt="Spark Dating App Mockup" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-overlay">
+            <span class="card-view">View Project</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span class="card-category">Dating Platform</span>
+          <h3 class="card-title">Spark Dating</h3>
+          <p class="card-desc">Vibrant connection platform with modern typography and sleek UI flow.</p>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      <!-- Card 6: Vertex Tech -->
+      <div class="featured-card reveal-up" data-tilt data-project="vertex-tech">
+        <div class="card-image">
+          <div class="card-img-inner">
+            <img src="assets/projects/vertex-tech/thumb.png" alt="Vertex Tech Studio Mockup" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="card-overlay">
+            <span class="card-view">View Project</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span class="card-category">Enterprise Tech</span>
+          <h3 class="card-title">Vertex Tech</h3>
+          <p class="card-desc">High-contrast geometric brand system for a technical software consultancy.</p>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FEATURED WORKS MODAL ═══════════════ -->
+<div class="featured-modal" id="featured-modal">
+  <div class="f-modal-backdrop" id="f-modal-backdrop"></div>
+  <button class="f-modal-close" id="f-modal-close" aria-label="Close modal">×</button>
+  <div class="f-modal-content" id="f-modal-content">
+    <div class="f-modal-header">
+      <span class="f-modal-category" id="f-modal-category"></span>
+      <h2 class="f-modal-title" id="f-modal-title"></h2>
+    </div>
+    <div class="f-modal-body" id="f-modal-body">
+      <div class="f-modal-loading" id="f-modal-loading">Loading project details...</div>
+      <div class="f-modal-media" id="f-modal-media"></div>
+      <div class="f-modal-markdown" id="f-modal-markdown"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PROJECTS — CATEGORY GALLERY ═══════════════ -->
+<section id="projects" class="section projects-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">All Work</span>
+      <h2 class="section-title">Project <em>Gallery</em></h2>
+      <p class="section-desc">Explore my work across four creative disciplines. Click a category to dive deeper.</p>
+    </div>
+
+    <div class="projects-category-grid">
+
+      <!-- Video Editing -->
+      <a href="gallery-video.html" class="project-category-card reveal-up" id="cat-video-editing">
+        <div class="pcc-visual" style="background:linear-gradient(135deg, #020202 0%, #1a0533 50%, #080612 100%);">
+          <div class="pcc-icon" style="color: #d946ef; filter: drop-shadow(0 0 15px rgba(217,70,239,0.3));">🎬</div>
+          <div class="pcc-visual-glow" style="background:radial-gradient(circle at center, rgba(217,70,239,.15), transparent 70%);"></div>
+        </div>
+        <div class="pcc-body">
+          <h3 class="pcc-title">Video Editing</h3>
+          <p class="pcc-desc">Cinematic edits, reels, motion graphics, and color grading.</p>
+          <span class="pcc-cta">View Gallery <span class="pcc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Logo Design -->
+      <a href="gallery-logos.html" class="project-category-card reveal-up" id="cat-logo-design">
+        <div class="pcc-visual" style="background:linear-gradient(135deg, #020202 0%, #080612 50%, #05040a 100%);">
+          <div class="pcc-icon" style="color: #00f0ff; filter: drop-shadow(0 0 15px rgba(0,240,255,0.3));">✦</div>
+          <div class="pcc-visual-glow" style="background:radial-gradient(circle at center, rgba(0,240,255,.15), transparent 70%);"></div>
+        </div>
+        <div class="pcc-body">
+          <h3 class="pcc-title">Logo Design</h3>
+          <p class="pcc-desc">Minimalist and elegant logos for modern brands and startups.</p>
+          <span class="pcc-cta">View Gallery <span class="pcc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Social Media Design -->
+      <a href="gallery-social.html" class="project-category-card reveal-up" id="cat-social-media">
+        <div class="pcc-visual" style="background:linear-gradient(135deg, #020202 0%, #1a0533 50%, #080612 100%);">
+          <div class="pcc-icon" style="color: #d946ef; filter: drop-shadow(0 0 15px rgba(217,70,239,0.3));">📱</div>
+          <div class="pcc-visual-glow" style="background:radial-gradient(circle at center, rgba(217,70,239,.15), transparent 70%);"></div>
+        </div>
+        <div class="pcc-body">
+          <h3 class="pcc-title">Social Media Design</h3>
+          <p class="pcc-desc">Page designs, reel covers, and post designs for emerging brands.</p>
+          <span class="pcc-cta">View Gallery <span class="pcc-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Web Design -->
+      <a href="gallery-web.html" class="project-category-card reveal-up" id="cat-web-design">
+        <div class="pcc-visual" style="background:linear-gradient(135deg, #020202 0%, #080612 50%, #05040a 100%);">
+          <div class="pcc-icon" style="color: #00f0ff; filter: drop-shadow(0 0 15px rgba(0,240,255,0.3));">🌐</div>
+          <div class="pcc-visual-glow" style="background:radial-gradient(circle at center, rgba(0,240,255,.15), transparent 70%);"></div>
+        </div>
+        <div class="pcc-body">
+          <h3 class="pcc-title">Web Design</h3>
+          <p class="pcc-desc">Modern websites with custom animations, responsive layouts, and live links.</p>
+          <span class="pcc-cta">View Gallery <span class="pcc-arrow">→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GLOBAL PROJECT LIGHTBOX ═══════════════ -->
+<div class="project-lightbox" id="project-lightbox">
+  <div class="lightbox-backdrop" id="pl-backdrop"></div>
+  <button class="lightbox-close" id="pl-close" aria-label="Close lightbox">×</button>
+  <div class="lightbox-content" id="pl-content">
+    <div class="pl-media" id="pl-media-container"></div>
+    <div class="pl-info">
+      <span class="pl-category" id="pl-category"></span>
+      <h2 class="pl-title" id="pl-title"></h2>
+      <p class="pl-desc" id="pl-desc"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MUSIC SECTION (YOUTUBE INTEGRATION) ═══════════════ -->
+<section id="music" class="section music-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Audio & Sound</span>
+      <h2 class="section-title">Music <em>Releases</em></h2>
+      <p class="section-desc">Latest tracks and sonic experiments automatically synced from YouTube.</p>
+    </div>
+    
+    <!-- Dynamic Music Gallery injected here -->
+    <div class="music-grid reveal-up" id="dynamic-music-container">
+      <div class="loading-pulse">Fetching latest tracks from @simomi...</div>
+    </div>
+    
+    <!-- Expanding Music Player -->
+    <div class="music-player-wrapper" id="music-player-wrapper">
+      <div class="player-glass">
+        <div class="player-header">
+          <span class="player-label">Now Playing</span>
+          <button class="player-close" id="player-close" aria-label="Close player">×</button>
+        </div>
+        <div class="player-embed" id="player-embed">
+          <p class="player-placeholder">Select a track above to start listening</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ VIDEO SECTION ═══════════════ -->
+<section id="video" class="section video-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Watch</span>
+      <h2 class="section-title">Video <em>Production</em></h2>
+      <p class="section-desc">Cinematic video projects with creative direction, editing, and post-production.</p>
+    </div>
+    <div class="video-project">
+      <div class="video-hero-layout reveal-up">
+        <div class="video-project-player phone-presentation">
+          <div class="phone-frame-wrapper">
+            <div class="phone-notch"></div>
+            <div class="phone-frame-screen">
+              <!-- Halifax Explosion of 1917 -->
+              <video src="projects/video-production/video.mp4" controls preload="metadata"></video>
+            </div>
+          </div>
+        </div>
+        <div class="video-project-content">
+          <div class="video-project-info">
+            <span class="video-label" style="font-size:.68rem; letter-spacing:.28em; text-transform:uppercase; color:var(--neon-cyan); margin-bottom:.85rem; display:block; font-weight:600;">Case Study</span>
+            <h3>Halifax Explosion of 1917</h3>
+            <p>This story-driven video about the Halifax Explosion of 1917 was created using a mix of AI tools and manual editing. The process included researching the historical event, writing the script, generating AI narration, creating and refining images in Photoshop, turning them into video clips, and assembling everything with sound effects, music, and editing to produce a polished historical short.</p>
+            <div class="video-project-tags">
+              <span class="video-tag">Premiere Pro</span>
+              <span class="video-tag">Adobe Firefly</span>
+              <span class="video-tag">Color Grading</span>
+              <span class="video-tag">Motion Graphic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Frame Gallery (2x2) -->
+      <div class="frame-grid video-project-frames reveal-up">
+        <div class="frame-item video-frame-thumb" data-lightbox="projects/video-production/frame1.jpg">
+          <img src="projects/video-production/frame1.jpg" alt="Frame 1" class="frame-bg">
+          <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        </div>
+        <div class="frame-item video-frame-thumb" data-lightbox="projects/video-production/frame2.jpg">
+          <img src="projects/video-production/frame2.jpg" alt="Frame 2" class="frame-bg">
+          <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        </div>
+        <div class="frame-item video-frame-thumb" data-lightbox="projects/video-production/frame3.jpg">
+          <img src="projects/video-production/frame3.jpg" alt="Frame 3" class="frame-bg">
+          <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        </div>
+        <div class="frame-item video-frame-thumb" data-lightbox="projects/video-production/frame4.jpg">
+          <img src="projects/video-production/frame4.jpg" alt="Frame 4" class="frame-bg">
+          <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LOGO GALLERY ═══════════════ -->
+<section id="logo-gallery" class="section logo-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Design</span>
+      <h2 class="section-title">Logo <em>Gallery</em></h2>
+      <p class="section-desc">Minimalist and elegant logo designs for modern brands.</p>
+    </div>
+    <div class="logo-grid">
+      <div class="logo-item reveal-up" data-label="Tech Startup">
+        <div class="logo-placeholder" style="background: linear-gradient(135deg, #1a0533 0%, #0f0c29 100%);">
+          <img src="projects/logos/logo1.png" alt="Brand Logo 1 Tech Startup">
+        </div>
+      </div>
+      <div class="logo-item reveal-up" data-label="Creative Agency">
+        <div class="logo-placeholder" style="background: linear-gradient(135deg, #2d1b69 0%, #0a0a2a 100%);">
+          <img src="projects/logos/logo2.png" alt="Brand Logo 2 Creative Agency">
+        </div>
+      </div>
+      <div class="logo-item reveal-up" data-label="Music Label">
+        <div class="logo-placeholder" style="background: linear-gradient(135deg, #0c0c1d 0%, #2d0a4e 100%);">
+          <img src="projects/logos/logo3.png" alt="Brand Logo 3 Music Label">
+        </div>
+      </div>
+      <div class="logo-item reveal-up" data-label="Fashion Brand">
+        <div class="logo-placeholder" style="background: linear-gradient(135deg, #1a0a3a 0%, #3d1a6e 100%);">
+          <img src="projects/logos/logo4.png" alt="Brand Logo 4 Fashion Brand">
+        </div>
+      </div>
+      <div class="logo-item reveal-up" data-label="Restaurant">
+        <div class="logo-placeholder" style="background: linear-gradient(135deg, #150a2e 0%, #0f0f2d 100%);">
+          <img src="projects/logos/logo5.png" alt="Brand Logo 5 Restaurant">
+        </div>
+      </div>
+      <div class="logo-item reveal-up" data-label="App Icon">
+        <div class="logo-placeholder" style="background: linear-gradient(135deg, #0f0519 0%, #1f0f3f 100%);">
+          <img src="projects/logos/logo6.png" alt="Brand Logo 6 App Icon">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SOCIAL MEDIA & BRAND ═══════════════ -->
+<section id="social-brand" class="section brand-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Showcase</span>
+      <h2 class="section-title">Social Media & <em>Brand Work</em></h2>
+      <p class="section-desc">Brand identity visuals, social media content, and creative mockups.</p>
+    </div>
+    <div class="mockup-grid">
+      <div class="mockup-card reveal-up">
+        <div class="mockup-visual phone-mockup">
+          <div class="phone-frame">
+            <div class="phone-screen" style="background: linear-gradient(135deg, #1a0533, #2d1b69);">
+              <img src="projects/reels/reels1.png" alt="Instagram Feed Preview" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+        <div class="mockup-info">
+          <h3>Instagram Campaign</h3>
+          <p>Social media content design and strategy</p>
+        </div>
+      </div>
+      <div class="mockup-card reveal-up">
+        <div class="mockup-visual billboard-mockup">
+          <div class="billboard-frame" style="background: linear-gradient(135deg, #0f0c29, #1a0a3a);">
+            <div class="mockup-label-inner">Billboard Design</div>
+          </div>
+        </div>
+        <div class="mockup-info">
+          <h3>Billboard Campaign</h3>
+          <p>Large format brand advertising</p>
+        </div>
+      </div>
+      <div class="mockup-card reveal-up">
+        <div class="mockup-visual phone-mockup">
+          <div class="phone-frame">
+            <div class="phone-screen" style="background: linear-gradient(135deg, #2d0a4e, #0c0c1d);">
+              <div class="mockup-label-inner">TikTok Content</div>
+            </div>
+          </div>
+        </div>
+        <div class="mockup-info">
+          <h3>TikTok Strategy</h3>
+          <p>Short-form video content creation</p>
+        </div>
+      </div>
+      <div class="mockup-card reveal-up">
+        <div class="mockup-visual">
+          <div class="brand-card-frame" style="background: linear-gradient(135deg, #0a0a2a, #3d1a6e);">
+            <div class="mockup-label-inner">Brand Identity</div>
+          </div>
+        </div>
+        <div class="mockup-info">
+          <h3>Brand Identity Kit</h3>
+          <p>Complete visual identity system</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ AI ART ═══════════════ -->
+<section id="ai-art" class="section ai-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Generative</span>
+      <h2 class="section-title">AI <em>Art</em></h2>
+      <p class="section-desc">Exploring the frontier of AI-generated visual art.</p>
+    </div>
+    <div class="ai-gallery">
+      <div class="ai-item reveal-up" style="background: linear-gradient(135deg, #1a0533 0%, #3d1a6e 50%, #0f0c29 100%);">
+        <svg class="ai-logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 21C4.5 21 6.3 19 12 19C17.7 19 19.5 21 19.5 21L21 21L21 17L19.5 17C19.5 17 17.7 18 12 18C6.3 18 4.5 17 4.5 17L3 17L3 21L4.5 21ZM12 15C15 15 17.5 12.5 17.5 9.5C17.5 6.5 15 4 12 4C9 4 6.5 6.5 6.5 9.5C6.5 12.5 9 15 12 15ZM12 6C13.9 6 15.5 7.6 15.5 9.5C15.5 11.4 13.9 13 12 13C10.1 13 8.5 11.4 8.5 9.5C8.5 7.6 10.1 6 12 6Z" />
+          <path d="M12 2L12 16M8 4L8 14M16 4L16 14M5 7L5 12M19 7L19 12" stroke="currentColor" stroke-width="0.8" fill="none" />
+        </svg>
+        <div class="ai-label">Midjourney Creation</div>
+      </div>
+      <div class="ai-item reveal-up" style="background: linear-gradient(135deg, #0c0c1d 0%, #2d0a4e 50%, #1a0a3a 100%);">
+        <svg class="ai-logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2C7 2 5 4 5 7C5 10 9 11 9 13C9 14.5 8 15.5 6.5 15.5C5 15.5 4 14.5 4 13L2 13C2 15.5 4 17.5 6.5 17.5C9.5 17.5 11.5 15.5 11.5 12.5C11.5 9.5 7.5 8.5 7.5 6.5C7.5 5 8.5 4 10 4C11.5 4 12.5 5 12.5 6.5L14.5 6.5C14.5 4 12.5 2 10 2Z" fill="currentColor"/>
+          <path d="M19.5 6.5C19.5 4 17.5 2 15 2L15 4C16.5 4 17.5 5 17.5 6.5C17.5 8.5 13.5 9.5 13.5 12.5C13.5 15.5 15.5 17.5 18 17.5C20.5 17.5 22.5 15.5 22.5 13L20.5 13C20.5 14.5 19.5 15.5 18 15.5C16.5 15.5 15.5 14.5 15.5 13C15.5 11 19.5 10 19.5 6.5Z" fill="currentColor"/>
+          <path d="M3 21H21L12 18L3 21Z" fill="currentColor" fill-opacity="0.5"/>
+        </svg>
+        <div class="ai-label">Stable Diffusion</div>
+      </div>
+      <div class="ai-item reveal-up" style="background: linear-gradient(135deg, #150a2e 0%, #0f0f2d 50%, #2a0a4e 100%);">
+        <svg class="ai-logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L4 6v6c0 4 3.5 7.5 8 10c4.5-2.5 8-6 8-10V6L12 2z"/>
+          <path d="M12 2v20"/>
+          <path d="M4 12h16"/>
+          <path d="M7 8l10 8"/>
+          <path d="M17 8l-10 8"/>
+        </svg>
+        <div class="ai-label">Leonardo AI</div>
+      </div>
+      <div class="ai-item ai-item-wide reveal-up" style="background: linear-gradient(135deg, #0a0a1a 0%, #1a0a3a 30%, #3d1a6e 70%, #0f0c29 100%);">
+        <svg class="ai-logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 22H6L8.5 17H15.5L18 22H22L12 2ZM10 14L12 10L14 14H10Z" fill="currentColor"/>
+          <path d="M19 2C20.1 2 21 2.9 21 4C21 5.1 20.1 6 19 6C17.9 6 17 5.1 17 4C17 2.9 17.9 2 19 2Z" fill="currentColor"/>
+        </svg>
+        <div class="ai-label">Adobe Firefly Composition</div>
+      </div>
+      <div class="ai-item reveal-up" style="background: linear-gradient(135deg, #2d1b69 0%, #0f0519 50%, #1f0f3f 100%);">
+        <svg class="ai-logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="5" cy="5" r="3" fill="currentColor" fill-opacity="0.8"/><circle cx="19" cy="8" r="4" fill="currentColor" fill-opacity="0.6"/><circle cx="12" cy="18" r="5" fill="currentColor" fill-opacity="0.9"/><circle cx="4" cy="19" r="2" fill="currentColor" fill-opacity="0.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="7.5" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="7" x2="10.5" y2="15" stroke="currentColor" stroke-width="1.5"/><line x1="17" y1="10" x2="13.5" y2="15" stroke="currentColor" stroke-width="1.5"/><line x1="5" y1="18" x2="8" y2="18" stroke="currentColor" stroke-width="1.5"/><line x1="13" y1="14" x2="16" y2="10" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div class="ai-label">Neural Art</div>
+      </div>
+      <div class="ai-item reveal-up" style="background: linear-gradient(135deg, #0f0c29 0%, #1a0533 50%, #2d0a4e 100%);">
+        <svg class="ai-logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        <div class="ai-label">Dreamscape</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about" class="section about-section">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-text-col reveal-up">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">A Multidisciplinary <em>Creator</em></h2>
+        <p class="about-lead">Working at the intersection of music, AI, and visual design.</p>
+        <p class="about-body">I'm a multidisciplinary creative focused on experimentation, digital aesthetics, 
+           and storytelling through sound and visuals. My work spans music production, AI-generated art, 
+           video editing, brand identity, and creative technology. Every project is an opportunity to push 
+           the boundaries of what's possible when creativity meets technology.</p>
+        <p class="about-body">I believe in crafting experiences that feel alive — where every pixel, every note, 
+           and every frame serves a purpose. My approach combines technical precision with artistic intuition, 
+           resulting in work that resonates on both an emotional and aesthetic level.</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="6">0</span>
+            <span class="stat-label">Disciplines</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="100">0</span><span class="stat-suffix">%</span>
+            <span class="stat-label">Passion</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual-col reveal-up">
+        <div class="about-image-frame">
+          <div class="about-image-placeholder" style="background: linear-gradient(135deg, #1a0533, #2d1b69, #0f0c29);">
+            <img src="projects/images/me.png" alt="Miklós Simó Profile Picture" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; border-radius: 20px;">
+          </div>
+          <div class="about-image-glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TOOLS / SKILLS ═══════════════ -->
+<section id="skills" class="section skills-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Expertise</span>
+      <h2 class="section-title">Tools & <em>Skills</em></h2>
+      <p class="section-desc">The creative arsenal I use to bring ideas to life.</p>
+    </div>
+    <div class="skills-grid">
+      <!-- AI Tools -->
+      <div class="skill-group reveal-up">
+        <h3 class="skill-group-title">AI Tools</h3>
+        <div class="skill-items">
+          <div class="skill-chip"><span class="skill-icon-mini">🧠</span><span>Midjourney</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🎨</span><span>Stable Diffusion</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🦁</span><span>Leonardo AI</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">✨</span><span>Adobe Firefly</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">💬</span><span>ChatGPT / Claude</span></div>
+        </div>
+      </div>
+      <!-- Creative Software -->
+      <div class="skill-group reveal-up">
+        <h3 class="skill-group-title">Creative Software</h3>
+        <div class="skill-items">
+          <div class="skill-chip"><span class="skill-icon-mini">📸</span><span>Photoshop</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">✏️</span><span>Illustrator</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🎬</span><span>Premiere Pro</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🔥</span><span>After Effects</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🎵</span><span>Audition</span></div>
+        </div>
+      </div>
+      <!-- Music Production -->
+      <div class="skill-group reveal-up">
+        <h3 class="skill-group-title">Music Production</h3>
+        <div class="skill-items">
+          <div class="skill-chip"><span class="skill-icon-mini">🎹</span><span>FL Studio</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🎛️</span><span>Serum / Vital</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🎚️</span><span>Mixing & Mastering</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🎶</span><span>Sound Design</span></div>
+        </div>
+      </div>
+      <!-- Web Development -->
+      <div class="skill-group reveal-up">
+        <h3 class="skill-group-title">Web Development</h3>
+        <div class="skill-items">
+          <div class="skill-chip"><span class="skill-icon-mini">🌐</span><span>HTML / CSS</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">⚡</span><span>JavaScript</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🐍</span><span>Python</span></div>
+          <div class="skill-chip"><span class="skill-icon-mini">🚀</span><span>GSAP Animation</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CV SECTION ═══════════════ -->
+<section id="cv" class="section cv-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Resume</span>
+      <h2 class="section-title">Curriculum <em>Vitae</em></h2>
+      <p class="section-desc">View my professional experience and qualifications.</p>
+    </div>
+    <div class="cv-content reveal-up">
+      <div class="cv-viewer glass-panel">
+        <div class="cv-placeholder">
+          <div class="cv-icon">📄</div>
+          <h3>CV Document</h3>
+          <p>My full curriculum vitae with professional experience, education, and skills.</p>
+          <div class="cv-actions">
+            <a href="mailto:simo.miklos00@gmail.com?subject=CV%20Request" class="btn-primary glow-btn cv-view-btn" id="cv-view-btn">
+              <span>Request Full CV</span>
+              <div class="btn-glow"></div>
+            </a>
+            <a href="https://www.linkedin.com/in/miklós-simó-b4768a217" target="_blank" class="btn-outline glow-btn cv-download-btn" id="cv-download-btn">
+              <span>View on LinkedIn</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-text reveal-up">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Let's <em>Connect</em></h2>
+        <p class="contact-desc">Have a project in mind? Let's create something extraordinary together.</p>
+      </div>
+      <div class="contact-links-grid reveal-up">
+        <a href="https://www.linkedin.com/in/miklós-simó-b4768a217" target="_blank" class="contact-link-card glass-panel" id="link-linkedin">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <span class="contact-link-label">LinkedIn</span>
+          <div class="contact-link-glow"></div>
+        </a>
+        <a href="https://www.instagram.com/simo.miklos" target="_blank" class="contact-link-card glass-panel" id="link-instagram">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <span class="contact-link-label">Instagram</span>
+          <div class="contact-link-glow"></div>
+        </a>
+        <a href="mailto:simo.miklos00@gmail.com" class="contact-link-card glass-panel" id="link-email">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <span class="contact-link-label">Email</span>
+          <div class="contact-link-glow"></div>
+        </a>
+        <a href="https://www.youtube.com/@simomi" target="_blank" class="contact-link-card glass-panel" id="link-youtube">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <span class="contact-link-label">YouTube</span>
+          <div class="contact-link-glow"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <svg class="footer-svg diamond-footer-svg" width="38" height="38" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="foot-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00f0ff" />
+              <stop offset="100%" stop-color="#0284c7" />
+            </linearGradient>
+            <linearGradient id="foot-purple" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#d946ef" />
+              <stop offset="100%" stop-color="#7c3aed" />
+            </linearGradient>
+          </defs>
+          <path class="logo-outer" d="M 45.8 6.2 Q 50 2 54.2 6.2 L 93.8 45.8 Q 98 50 93.8 54.2 L 54.2 93.8 Q 50 98 45.8 93.8 L 6.2 54.2 Q 2 50 6.2 45.8 Z" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+          <g transform="scale(0.85)" transform-origin="50 50">
+            <path class="logo-s" d="M 98 50 L 54.2 93.8 Q 50 98 45.8 93.8 L 30.2 78.2 Q 26 74 30.2 69.8 L 69.8 30.2 Q 74 26 69.8 21.8 L 54.2 6.2 Q 50 2 45.8 6.2 L 2 50" fill="none" stroke="url(#foot-purple)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="logo-m" d="M 2 50 L 21.8 30.2 Q 26 26 30.2 30.2 L 45.8 45.8 Q 50 50 54.2 45.8 L 69.8 30.2 Q 74 26 78.2 30.2 L 98 50" fill="none" stroke="url(#foot-cyan)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        <span class="footer-name">Miklós Simó</span>
+      </div>
+      <p class="footer-copy">© 2026 Miklós Simó. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/miklós-simó-b4768a217" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/simo.miklos" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@simomi" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════ LIGHTBOX OVERLAY ═══════════════ -->
+<div id="lightboxOverlay" class="lightbox-overlay">
+  <div class="lightbox-content">
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img id="lightboxImage" src="" alt="Expanded View" class="lightbox-img">
+  </div>
+</div>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- Simple Markdown Parser -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="projects/data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

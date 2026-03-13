@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Editing — Miklós Simó</title>
+  <meta name="description" content="Video editing portfolio of Miklós Simó — cinematic edits, reels, motion graphics and color grading.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a0533'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='14' font-weight='700' fill='%238b5cf6' text-anchor='middle'%3EMS%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<!-- Premium Ambient Background Motion & Subtle Dust -->
+<div class="ambient-bg" aria-hidden="true">
+  <div class="ambient-dust"></div>
+  <div class="ambient-blob ambient-blob-1"></div>
+  <div class="ambient-blob ambient-blob-2"></div>
+  <div class="ambient-blob ambient-blob-3"></div>
+</div>
+
+<!-- ═══════════════ CUSTOM CURSOR ═══════════════ -->
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<header class="main-nav scrolled" id="main-nav">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand" id="nav-brand-link">
+      <svg class="brand-svg diamond-nav-svg" width="38" height="38" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gvid-nav-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00f0ff"/>
+            <stop offset="100%" stop-color="#0284c7"/>
+          </linearGradient>
+          <linearGradient id="gvid-nav-purple" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d946ef"/>
+            <stop offset="100%" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+        <path class="logo-outer" d="M 50 2 L 98 50 L 50 98 L 2 50 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+        <g transform="scale(0.85)" transform-origin="50 50">
+          <path class="logo-s" d="M 98 50 L 50 98 L 26 74 L 74 26 L 50 2 L 2 50" fill="none" stroke="url(#gvid-nav-purple)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="logo-m" d="M 2 50 L 26 26 L 50 50 L 74 26 L 98 50" fill="none" stroke="url(#gvid-nav-cyan)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <span class="brand-name">MIKLÓS SIMÓ</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html#hero" class="nav-link">Home</a>
+      <a href="index.html#featured" class="nav-link">Works</a>
+      <a href="index.html#projects" class="nav-link active">Projects</a>
+      <a href="index.html#music" class="nav-link">Music</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#cv" class="nav-link">CV</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay">
+  <nav class="mobile-nav-links">
+    <a href="index.html#hero" class="mobile-nav-link">Home</a>
+    <a href="index.html#featured" class="mobile-nav-link">Works</a>
+    <a href="index.html#projects" class="mobile-nav-link">Projects</a>
+    <a href="index.html#music" class="mobile-nav-link">Music</a>
+    <a href="index.html#about" class="mobile-nav-link">About</a>
+    <a href="index.html#cv" class="mobile-nav-link">CV</a>
+    <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+  </nav>
+</div>
+
+<!-- ═══════════════ GALLERY PAGE ═══════════════ -->
+<main class="gallery-page">
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="gallery-hero">
+      <a href="index.html#projects" class="gallery-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Projects
+      </a>
+      <div class="gallery-hero-icon">🎬</div>
+      <h1>Video <em>Editing</em></h1>
+      <p>Cinematic video projects with creative direction, editing, color grading and motion graphics.</p>
+    </div>
+
+    <!-- Gallery Content -->
+    <div class="gallery-content">
+
+      <!-- Project 1: A quiet moment. -->
+      <div class="video-project reveal-up">
+        <div class="video-hero-layout">
+          <div class="video-project-player phone-presentation">
+            <div class="phone-frame-wrapper">
+              <div class="phone-notch"></div>
+              <div class="phone-frame-screen">
+                <video src="projects/video/video1/video.mp4" controls preload="metadata"></video>
+              </div>
+            </div>
+          </div>
+          <div class="video-project-content">
+            <div class="video-project-info">
+              <h3>A quiet moment.</h3>
+              <p>A quiet moment.</p>
+              <div class="video-project-tags">
+                <span class="video-tag">Adobe Firefly</span>
+                <span class="video-tag">Premiere Pro</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-grid video-project-frames">
+          <div class="frame-item video-frame-thumb" data-lightbox="projects/video/video1/frame1.jpg">
+            <img src="projects/video/video1/frame1.jpg" alt="Frame 1" class="frame-bg">
+            <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          </div>
+          <div class="frame-item video-frame-thumb" data-lightbox="projects/video/video1/frame2.jpg">
+            <img src="projects/video/video1/frame2.jpg" alt="Frame 2" class="frame-bg">
+            <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          </div>
+          <div class="frame-item video-frame-thumb" data-lightbox="projects/video/video1/frame3.jpg">
+            <img src="projects/video/video1/frame3.jpg" alt="Frame 3" class="frame-bg">
+            <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          </div>
+          <div class="frame-item video-frame-thumb" data-lightbox="projects/video/video1/frame4.jpg">
+            <img src="projects/video/video1/frame4.jpg" alt="Frame 4" class="frame-bg">
+            <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Music Project -->
+      <div class="video-project reveal-up">
+        <div class="video-hero-layout">
+          <div class="video-project-player phone-presentation">
+            <div class="phone-frame-wrapper">
+              <div class="phone-notch"></div>
+              <div class="phone-frame-screen">
+                <video src="projects/video/video2/video.mp4" controls preload="metadata"></video>
+              </div>
+            </div>
+          </div>
+          <div class="video-project-content">
+            <div class="video-project-info">
+              <h3>Music Project</h3>
+              <p>The pulse is yours to follow. The shadows move with it.<br>Feel the solitude. Feel the rhythm. Let the world fade.</p>
+              <div class="video-project-tags">
+                <span class="video-tag">FLStudio</span>
+                <span class="video-tag">Adobe Firefly</span>
+                <span class="video-tag">Premiere Pro</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-grid video-project-frames">
+          <div class="frame-item video-frame-thumb" data-lightbox="projects/video/video2/frame1.jpg">
+            <img src="projects/video/video2/frame1.jpg" alt="Frame 1" class="frame-bg">
+            <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          </div>
+          <div class="frame-item video-frame-thumb" data-lightbox="projects/video/video2/frame2.jpg">
+            <img src="projects/video/video2/frame2.jpg" alt="Frame 2" class="frame-bg">
+            <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          </div>
+          <div class="frame-item video-frame-thumb" data-lightbox="projects/video/video2/frame3.jpg">
+            <img src="projects/video/video2/frame3.jpg" alt="Frame 3" class="frame-bg">
+            <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          </div>
+          <div class="frame-item video-frame-thumb" data-lightbox="projects/video/video2/frame4.jpg">
+            <img src="projects/video/video2/frame4.jpg" alt="Frame 4" class="frame-bg">
+            <div class="frame-inner-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <svg class="footer-svg" width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gvid-foot-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00f0ff"/>
+              <stop offset="100%" stop-color="#0284c7"/>
+            </linearGradient>
+            <linearGradient id="gvid-foot-purple" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#d946ef"/>
+              <stop offset="100%" stop-color="#7c3aed"/>
+            </linearGradient>
+          </defs>
+          <path d="M 50 2 L 98 50 L 50 98 L 2 50 Z" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+          <g transform="scale(0.85)" transform-origin="50 50">
+            <path d="M 98 50 L 50 98 L 26 74 L 74 26 L 50 2 L 2 50" fill="none" stroke="url(#gvid-foot-purple)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 2 50 L 26 26 L 50 50 L 74 26 L 98 50" fill="none" stroke="url(#gvid-foot-cyan)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        <span class="footer-name">Miklós Simó</span>
+      </div>
+      <p class="footer-copy">© 2026 Miklós Simó. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════ LIGHTBOX OVERLAY ═══════════════ -->
+<div id="lightboxOverlay" class="lightbox-overlay">
+  <div class="lightbox-content">
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img id="lightboxImage" src="" alt="Expanded View" class="lightbox-img">
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="gallery.js"></script>
+</body>
+</html>

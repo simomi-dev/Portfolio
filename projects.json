@@ -1,0 +1,11 @@
+{
+  "categories": [
+    { "id": "music", "label": "Music", "icon": "🎵" },
+    { "id": "video", "label": "Video Production", "icon": "🎬" },
+    { "id": "logos", "label": "Logo Design", "icon": "✦" },
+    { "id": "branding", "label": "Branding", "icon": "🌐" },
+    { "id": "social-media", "label": "Social Media", "icon": "📱" },
+    { "id": "ai-art", "label": "AI Art", "icon": "🧠" }
+  ],
+  "projects": []
+}

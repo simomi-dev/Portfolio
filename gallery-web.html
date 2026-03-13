@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Design — Miklós Simó</title>
+  <meta name="description" content="Web design portfolio of Miklós Simó — modern websites, landing pages, and web applications.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a0533'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='14' font-weight='700' fill='%238b5cf6' text-anchor='middle'%3EMS%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<!-- Premium Ambient Background Motion & Subtle Dust -->
+<div class="ambient-bg" aria-hidden="true">
+  <div class="ambient-dust"></div>
+  <div class="ambient-blob ambient-blob-1"></div>
+  <div class="ambient-blob ambient-blob-2"></div>
+  <div class="ambient-blob ambient-blob-3"></div>
+</div>
+
+<!-- Cursor -->
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<header class="main-nav scrolled" id="main-nav">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand" id="nav-brand-link">
+      <svg class="brand-svg diamond-nav-svg" width="38" height="38" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gweb-nav-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00f0ff"/>
+            <stop offset="100%" stop-color="#0284c7"/>
+          </linearGradient>
+          <linearGradient id="gweb-nav-purple" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d946ef"/>
+            <stop offset="100%" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+        <path class="logo-outer" d="M 45.8 6.2 Q 50 2 54.2 6.2 L 93.8 45.8 Q 98 50 93.8 54.2 L 54.2 93.8 Q 50 98 45.8 93.8 L 6.2 54.2 Q 2 50 6.2 45.8 Z" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+        <g transform="scale(0.85)" transform-origin="50 50">
+          <path class="logo-s" d="M 98 50 L 54.2 93.8 Q 50 98 45.8 93.8 L 30.2 78.2 Q 26 74 30.2 69.8 L 69.8 30.2 Q 74 26 69.8 21.8 L 54.2 6.2 Q 50 2 45.8 6.2 L 2 50" fill="none" stroke="url(#gweb-nav-purple)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="logo-m" d="M 2 50 L 21.8 30.2 Q 26 26 30.2 30.2 L 45.8 45.8 Q 50 50 54.2 45.8 L 69.8 30.2 Q 74 26 78.2 30.2 L 98 50" fill="none" stroke="url(#gweb-nav-cyan)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <span class="brand-name">MIKLÓS SIMÓ</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html#hero" class="nav-link">Home</a>
+      <a href="index.html#featured" class="nav-link">Works</a>
+      <a href="index.html#projects" class="nav-link active">Projects</a>
+      <a href="index.html#music" class="nav-link">Music</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#cv" class="nav-link">CV</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobile-nav-overlay">
+  <nav class="mobile-nav-links">
+    <a href="index.html#hero" class="mobile-nav-link">Home</a>
+    <a href="index.html#featured" class="mobile-nav-link">Works</a>
+    <a href="index.html#projects" class="mobile-nav-link">Projects</a>
+    <a href="index.html#music" class="mobile-nav-link">Music</a>
+    <a href="index.html#about" class="mobile-nav-link">About</a>
+    <a href="index.html#cv" class="mobile-nav-link">CV</a>
+    <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+  </nav>
+</div>
+
+<!-- ═══════════════ WEB DESIGN GALLERY ═══════════════ -->
+<main class="gallery-page">
+  <div class="container">
+
+    <div class="gallery-hero">
+      <a href="index.html#projects" class="gallery-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Projects
+      </a>
+      <div class="gallery-hero-icon">🌐</div>
+      <h1>Web <em>Design</em></h1>
+      <p>Modern websites and web applications designed with attention to aesthetics, UX, and performance.</p>
+    </div>
+
+    <div class="gallery-content">
+      <div class="web-projects-grid">
+
+        <!-- Project 1: Portfolio Website -->
+        <div class="web-project-card reveal-up">
+          <div class="web-project-screenshots">
+            <div class="screenshot-placeholder">
+              <span class="screenshot-placeholder-icon">💼</span>
+              <span>Portfolio Website</span>
+            </div>
+          </div>
+          <div class="web-project-body">
+            <h3>Personal Portfolio</h3>
+            <p>This very website — a dark, premium portfolio built with custom animations, GSAP, parallax effects, and a fully custom design system.</p>
+            <div class="web-project-techs">
+              <span class="web-tech">HTML / CSS / JS</span>
+              <span class="web-tech">GSAP</span>
+              <span class="web-tech">Python Backend</span>
+              <span class="web-tech">Custom CMS</span>
+            </div>
+            <div class="web-project-actions">
+              <a href="index.html" class="web-btn web-btn-live">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Cannabis Shop -->
+        <div class="web-project-card reveal-up">
+          <div class="web-project-screenshots">
+            <div class="screenshot-placeholder" style="background: linear-gradient(135deg, #051a0f 0%, #1a052e 100%);">
+              <span class="screenshot-placeholder-icon" style="filter: drop-shadow(0 0 20px rgba(0,255,136,0.5));">🌿</span>
+              <div style="position: absolute; bottom: 20px; text-align: center; width: 100%;">
+                <span style="color: #00ff88; font-weight: 900; letter-spacing: 5px; font-size: 0.6rem; text-transform: uppercase; opacity: 0.8;">Flagship Boutique</span>
+              </div>
+            </div>
+          </div>
+          <div class="web-project-body">
+            <h3>Leaf & Lens — Flagship Showcase</h3>
+            <p>A flagship cannabis e-commerce showcase featuring photography-led curation, cinematic glassmorphism, and integrated Google Maps location for the high-end Mallorca market.</p>
+            <div class="web-project-techs">
+              <span class="web-tech">HTML5 / CSS3</span>
+              <span class="web-tech">GSAP Animations</span>
+              <span class="web-tech">Premium UI/UX</span>
+            </div>
+            <div class="web-project-actions">
+              <a href="projects/cannabis-shop/index.html" target="_blank" class="web-btn web-btn-live">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: E-commerce -->
+        <div class="web-project-card reveal-up">
+          <div class="web-project-screenshots">
+            <div class="screenshot-placeholder">
+              <span class="screenshot-placeholder-icon">🛒</span>
+              <span>E-Commerce Store</span>
+            </div>
+          </div>
+          <div class="web-project-body">
+            <h3>E-Commerce Concept</h3>
+            <p>Full e-commerce website design with product catalog, cart system, checkout flow, and admin dashboard concept.</p>
+            <div class="web-project-techs">
+              <span class="web-tech">React</span>
+              <span class="web-tech">Node.js</span>
+              <span class="web-tech">Stripe</span>
+            </div>
+            <div class="web-project-actions">
+              <span class="web-btn web-btn-coming">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Dashboard -->
+        <div class="web-project-card reveal-up">
+          <div class="web-project-screenshots">
+            <div class="screenshot-placeholder">
+              <span class="screenshot-placeholder-icon">📊</span>
+              <span>Analytics Dashboard</span>
+            </div>
+          </div>
+          <div class="web-project-body">
+            <h3>Analytics Dashboard</h3>
+            <p>Dark-themed analytics dashboard with real-time charts, data visualization components, and a clean, modern interface.</p>
+            <div class="web-project-techs">
+              <span class="web-tech">Vue.js</span>
+              <span class="web-tech">D3.js</span>
+              <span class="web-tech">Chart.js</span>
+            </div>
+            <div class="web-project-actions">
+              <span class="web-btn web-btn-coming">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <svg class="footer-svg" width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gweb-foot-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00f0ff"/>
+              <stop offset="100%" stop-color="#0284c7"/>
+            </linearGradient>
+            <linearGradient id="gweb-foot-purple" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#d946ef"/>
+              <stop offset="100%" stop-color="#7c3aed"/>
+            </linearGradient>
+          </defs>
+          <path d="M 45.8 6.2 Q 50 2 54.2 6.2 L 93.8 45.8 Q 98 50 93.8 54.2 L 54.2 93.8 Q 50 98 45.8 93.8 L 6.2 54.2 Q 2 50 6.2 45.8 Z" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+          <g transform="scale(0.85)" transform-origin="50 50">
+            <path d="M 98 50 L 54.2 93.8 Q 50 98 45.8 93.8 L 30.2 78.2 Q 26 74 30.2 69.8 L 69.8 30.2 Q 74 26 69.8 21.8 L 54.2 6.2 Q 50 2 45.8 6.2 L 2 50" fill="none" stroke="url(#gweb-foot-purple)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 2 50 L 21.8 30.2 Q 26 26 30.2 30.2 L 45.8 45.8 Q 50 50 54.2 45.8 L 69.8 30.2 Q 74 26 78.2 30.2 L 98 50" fill="none" stroke="url(#gweb-foot-cyan)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        <span class="footer-name">Miklós Simó</span>
+      </div>
+      <p class="footer-copy">© 2026 Miklós Simó. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf & Lens — Flagship Future Cannabis Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-green: #00ff88;
+            --neon-purple: #bc00ff;
+            --neon-pink: #ff00bd;
+            --bg-deep: #020205;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+            --text-dim: #94a3b8;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 { font-family: 'Sora', sans-serif; text-transform: uppercase; letter-spacing: -0.02em; }
+
+        /* --- AMBIENT EFFECTS --- */
+        .ambient-glow {
+            position: fixed; inset: 0; z-index: -1; pointer-events: none;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(0, 255, 136, 0.04) 0%, transparent 60%),
+                radial-gradient(circle at 90% 90%, rgba(188, 0, 255, 0.05) 0%, transparent 60%);
+        }
+
+        /* --- FLOATING LEAVES --- */
+        .floating-leaves {
+            position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 5;
+        }
+        .leaf {
+            position: absolute; width: 40px; height: 40px; opacity: 0.15;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300ff88'%3E%3Cpath d='M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z'/%3E%3C/svg%3E") no-repeat center/contain;
+            filter: blur(0.5px);
+            animation: leaf-float linear infinite;
+        }
+        @keyframes leaf-float {
+            0% { transform: translateY(110vh) rotate(0deg) translateX(0); opacity: 0; }
+            10% { opacity: 0.15; }
+            90% { opacity: 0.15; }
+            100% { transform: translateY(-10vh) rotate(360deg) translateX(50px); opacity: 0; }
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 25px 6%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--glass-border);
+            background: rgba(2, 2, 5, 0.85);
+            transition: 0.4s var(--ease);
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; cursor: pointer; }
+        .logo span { color: var(--neon-green); text-shadow: 0 0 10px rgba(0,255,136,0.3); }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; transition: 0.3s; }
+        .nav-links a:hover { color: var(--neon-green); }
+
+        /* --- HERO --- */
+        .hero {
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 0 6%; position: relative; overflow: hidden;
+            background: linear-gradient(to bottom, rgba(2,2,5,0.4), var(--bg-deep)),
+                        url('https://wallpapercave.com/wp/wp2879333.jpg') center/cover no-repeat;
+        }
+        .hero-content {
+            text-align: center; max-width: 1000px; z-index: 10;
+            background: rgba(255,255,255,0.02);
+            padding: 90px 60px; border-radius: 40px;
+            backdrop-filter: blur(40px); border: 1px solid var(--glass-border);
+            box-shadow: 0 50px 120px rgba(0,0,0,0.85);
+            animation: hero-fade-in 1.5s var(--ease);
+        }
+        @keyframes hero-fade-in { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .hero h1 { font-size: 6rem; line-height: 0.9; margin-bottom: 25px; font-weight: 800; letter-spacing: -0.04em; }
+        .hero h1 span { color: var(--neon-green); }
+        .hero p { font-size: 1.3rem; color: var(--text-dim); margin-bottom: 45px; line-height: 1.6; max-width: 750px; margin-inline: auto; }
+
+        .btn-neon {
+            display: inline-flex; align-items: center; padding: 22px 60px;
+            background: var(--neon-green); color: #000; font-weight: 800;
+            text-decoration: none; border-radius: 100px; font-size: 1.05rem;
+            letter-spacing: 0.15em; box-shadow: 0 10px 40px rgba(0, 255, 136, 0.4);
+            transition: all 0.5s var(--ease); text-transform: uppercase;
+        }
+        .btn-neon:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 30px 80px rgba(0, 255, 136, 0.6); }
+
+        /* --- PRODUCT GRID --- */
+        .section { padding: 140px 6%; }
+        .section-header { text-align: center; margin-bottom: 100px; }
+        .section-header h2 { font-size: 4rem; margin-bottom: 15px; font-weight: 800; }
+        .section-header p { color: var(--neon-purple); font-weight: 800; letter-spacing: 0.4em; font-size: 0.85rem; text-transform: uppercase; }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 35px; }
+
+        .product-card {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: 40px; padding: 30px; transition: 0.6s var(--ease);
+            position: relative; overflow: hidden; display: flex; flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-15px); border-color: var(--neon-green); box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
+
+        .p-img-box {
+            width: 100%; aspect-ratio: 1; border-radius: 26px; overflow: hidden;
+            margin-bottom: 25px; background: #08080c; position: relative;
+        }
+        .p-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s var(--ease); filter: contrast(1.1) brightness(0.9); }
+        .product-card:hover .p-img-box img { transform: scale(1.15); filter: contrast(1.15) brightness(1.1); }
+
+        .p-info h3 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; font-weight: 700; }
+        .p-info p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px; }
+
+        .p-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 25px; margin-top: auto; }
+        .p-price { font-size: 1.7rem; font-weight: 800; color: #fff; }
+        .p-btn {
+            width: 55px; height: 55px; border-radius: 18px; border: 1px solid var(--glass-border);
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.03); color: #fff; transition: 0.4s;
+        }
+        .product-card:hover .p-btn { background: var(--neon-green); color: #000; border-color: var(--neon-green); box-shadow: 0 0 15px var(--neon-green); }
+
+        /* --- CONTACT & LOCATION --- */
+        .contact-section { display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px; align-items: stretch; }
+        .map-wrapper {
+            border-radius: 45px; overflow: hidden; border: 1px solid var(--glass-border);
+            height: 600px; position: relative; box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+        }
+        .map-wrapper iframe { width: 100%; height: 100%; border:0; filter: grayscale(1) invert(0.9) contrast(1.2) brightness(0.8); }
+        
+        .contact-panel {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: 45px; padding: 60px; backdrop-filter: blur(30px);
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .contact-panel h2 { font-size: 3rem; margin-bottom: 40px; }
+        .contact-panel h2 span { color: var(--neon-green); }
+        
+        .contact-info { display: flex; flex-direction: column; gap: 35px; }
+        .info-item { display: flex; gap: 20px; align-items: flex-start; }
+        .info-icon { 
+            width: 50px; height: 50px; border-radius: 15px; background: rgba(0, 255, 136, 0.1);
+            display: flex; align-items: center; justify-content: center; color: var(--neon-green);
+            flex-shrink: 0;
+        }
+        .info-text h4 { font-size: 0.75rem; color: var(--neon-purple); letter-spacing: 0.2em; margin-bottom: 5px; }
+        .info-text p { font-size: 1.1rem; color: #fff; line-height: 1.4; }
+
+        .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--glass-border); }
+        .hour-row { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-dim); }
+        .hour-row strong { color: #fff; }
+
+        /* --- FOOTER --- */
+        footer { padding: 120px 6% 80px; text-align: center; border-top: 1px solid var(--glass-border); background: #010105; }
+        .f-logo { font-size: 2.22rem; font-weight: 800; margin-bottom: 35px; letter-spacing: -2px; }
+        .f-links { display: flex; justify-content: center; gap: 60px; margin-bottom: 50px; }
+        .f-links a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; font-weight: 700; transition: 0.3s; }
+        .f-links a:hover { color: var(--neon-green); }
+        .f-copy { font-size: 0.8rem; color: rgba(255,255,255,0.1); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; }
+
+        @media (max-width: 1100px) {
+            .contact-section { grid-template-columns: 1fr; }
+            .map-wrapper { height: 450px; order: 2; }
+            .hero h1 { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+
+    <nav>
+        <div class="logo">LEAF<span>&</span>LENS</div>
+        <div class="nav-links">
+            <a href="#shop">Collection</a>
+            <a href="#location">Find Us</a>
+            <a href="#">Philosophy</a>
+        </div>
+        <div style="font-weight: 800; color: var(--neon-green); letter-spacing: 3px; cursor: pointer; text-transform: uppercase; font-size: 0.75rem;">Exclusive Access</div>
+    </nav>
+
+    <section class="hero">
+        <div class="floating-leaves" id="leaf-spawn"></div>
+        <div class="hero-content">
+            <p style="color: var(--neon-green); font-weight: 800; letter-spacing: 0.7em; margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem;">THE FUTURE OF WELLNESS</p>
+            <h1>NATURE <span>INTELLIGENCE</span></h1>
+            <p>Step into the sanctuary of high-photo-realism cannabis. Architectural excellence meets artisanal cultivation in a nocturnal neon paradise.</p>
+            <a href="#shop" class="btn-neon">ENTER BOUTIQUE</a>
+        </div>
+    </section>
+
+    <section id="shop" class="section">
+        <div class="section-header">
+            <p>MALLORCA FLAGSHIP SELECTION</p>
+            <h2>THE <span>BOUTIQUE</span> GRID</h2>
+        </div>
+        <div class="product-grid">
+            <!-- 1 to 12 (Identical Placeholders as requested) -->
+            <script>
+                const grid = document.querySelector('.product-grid');
+                const products = [
+                    { title: "NEON NIGHTS", cat: "Elite Indica" },
+                    { title: "CYBER HAZE", cat: "Prime Sativa" },
+                    { title: "ORBITAL HYBRID", cat: "Reserve Hybrid" },
+                    { title: "LIVE RESIN V.1", cat: "Extracts" },
+                    { title: "VON-CORE POD", cat: "Hardware" },
+                    { title: "NANO GUMMIES", cat: "Edibles" },
+                    { title: "TITANIUM MILL", cat: "Accessories" },
+                    { title: "SPECTRUM DROPS", cat: "Wellness" },
+                    { title: "FLAGSHIP CASE", cat: "Artisan" },
+                    { title: "VOID KUSH", cat: "Rare Indica" },
+                    { title: "ARENAL GOLD", cat: "Local Hybrid" },
+                    { title: "VON-MOD V2", cat: "Next-Gen Tech" }
+                ];
+
+                products.forEach(p => {
+                    grid.innerHTML += `
+                        <div class="product-card">
+                            <div class="p-img-box">
+                                <img src="https://images.unsplash.com/photo-1603909223429-69bb7101f420?auto=format&fit=crop&q=80&w=800" alt="${p.title}">
+                            </div>
+                            <div class="p-info">
+                                <span style="font-size: 0.7rem; color: var(--neon-pink); font-weight: 800; display: block; margin-bottom: 8px; letter-spacing: 0.1em; text-transform: uppercase;">${p.cat}</span>
+                                <h3>${p.title}</h3>
+                                <p>Premium photo-realistic floral curation. Laboratory verified for purity and potency in our Mallorca flagship center.</p>
+                            </div>
+                            <div class="p-footer">
+                                <span class="p-price">$85</span>
+                                <div class="p-btn">+</div>
+                            </div>
+                        </div>
+                    `;
+                });
+            </script>
+        </div>
+    </section>
+
+    <section id="location" class="section contact-section">
+        <div class="map-wrapper">
+            <!-- REAL ADDRESS: Carrer de les Balears, El Arenal, Mallorca -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3078.6823908865485!2d2.7483783!3d39.5085444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12979148d8c222ff%3A0x6d9f8df5b3cf54bb!2sCarrer%20de%20les%20Balears%2C%2007600%20Palma%2C%20Illes%20Balears%2C%20Spain!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class="contact-panel">
+            <h2>FLAGSHIP <span>BOUTIQUE</span></h2>
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <h4>LOCATION</h4>
+                        <p>Carrer de les Balears, 1, 07600<br>El Arenal, Mallorca, Spain</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-text">
+                        <h4>PHONE</h4>
+                        <p>+34 971 44 55 66</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-text">
+                        <h4>EMAIL</h4>
+                        <p>hello@leafandlens.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hours-grid">
+                <div class="hour-row"><strong>MON - FRI:</strong> 10:00 - 22:00</div>
+                <div class="hour-row"><strong>SATURDAY:</strong> 11:00 - 23:00</div>
+                <div class="hour-row"><strong>SUNDAY:</strong> 11:00 - 20:00</div>
+                <div class="hour-row"><strong>HOLIDAYS:</strong> 12:00 - 18:00</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="f-logo">LEAF<span>&</span>LENS</div>
+        <div class="f-links">
+            <a href="#shop">Collection</a>
+            <a href="#location">Boutique</a>
+            <a href="#">Philosophy</a>
+            <a href="#">Contact</a>
+        </div>
+        <p class="f-copy">&copy; 2026 LEAF & LENS — MALLORCA HIGH-END CANNABIS SHOWCASE</p>
+    </footer>
+
+    <script>
+        // Leaf Particle Spawning
+        const leaves = document.getElementById('leaf-spawn');
+        for (let i = 0; i < 24; i++) {
+            const leaf = document.createElement('div');
+            leaf.className = 'leaf';
+            leaf.style.left = Math.random() * 105 + '%';
+            leaf.style.animationDelay = Math.random() * 15 + 's';
+            leaf.style.animationDuration = (Math.random() * 8 + 12) + 's';
+            leaf.style.scale = Math.random() * 0.4 + 0.3;
+            leaves.appendChild(leaf);
+        }
+
+        // Section Reveal logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if(e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.product-card, .contact-panel, .map-wrapper').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'all 1.2s var(--ease)';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
